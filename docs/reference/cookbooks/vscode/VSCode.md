@@ -10,7 +10,7 @@ Since VSCode will be used extensively, we will focus on that in this document; i
 
 The **Explorer** (the top icon on the left-hand bar, or `Ctrl/Cmd+Shift+E`) shows the files in your workspace.
 
-![Explorer View](vscodeImg/explorer.png)
+![Explorer View](img/explorer.png)
 
 Every activity, midterm, and lab uses the same layout:
 
@@ -35,11 +35,11 @@ These are the problems the TypeScript compiler finds: a misspelled name, a missi
 
 - **In the editor.** Problem code is underlined in red, and the file name in the Explorer turns red with a count beside it. Hover over an underline to read the message.
 
-  ![Error in the editor](vscodeImg/errorEditor.png)
+  ![Error in the editor](img/errorEditor.png)
 
 - **In the Problems View** (`Ctrl/Cmd+Shift+M`, or the "Problems" tab in the panel along the bottom). This lists every problem in the workspace in one place. Click an entry to jump to the line. The VSCode documentation describes this in more detail under [Errors & warnings](https://code.visualstudio.com/docs/editing/editingevolved#_errors-warnings).
 
-  ![Error in the Problems View](vscodeImg/errorProblem.png)
+  ![Error in the Problems View](img/errorProblem.png)
 
 The same errors appear if you open the **Terminal View** (`` Ctrl/Cmd+` `` or the "Terminal" tab in the bottom panel; see [Terminal Basics](https://code.visualstudio.com/docs/terminal/basics) for more) and run:
 
@@ -47,8 +47,8 @@ The same errors appear if you open the **Terminal View** (`` Ctrl/Cmd+` `` or th
 pnpm build
 ```
 
-![Error Terminal Command](vscodeImg/errorTerminalBefore.png)
-![Error Terminal Result](vscodeImg/errorTerminalAfter.png)
+![Error Terminal Command](img/errorTerminalBefore.png)
+![Error Terminal Result](img/errorTerminalAfter.png)
 
 The grader runs this too, and stops there if your code does not compile. An empty Problems View is the first thing to check before you Save & Grade.
 
@@ -58,8 +58,8 @@ To fix a compilation error, go to the code that caused it and change it. Double-
 
 Some errors also offer a quick fix, which the VSCode documentation calls a [Code Action](https://code.visualstudio.com/docs/editing/editingevolved#_code-action). Quick fixes are not offered for every error and do not always do what you want, but they are often the fastest route. Here is an error that offers one:
 
-![Quick Fix Hover](vscodeImg/quickFixError.png)
-![Quick Fix Options](vscodeImg/quickFixErrorOpt.png)
+![Quick Fix Hover](img/quickFixError.png)
+![Quick Fix Options](img/quickFixErrorOpt.png)
 
 In this case the first two options fix the code and the last two do not. Read the options before choosing one; with practice you will recognise which kind of fix applies.
 
@@ -83,18 +83,18 @@ Dynamic problems only appear when the code runs: a function that compiles but re
 
 Tests run from the **Testing View** (the beaker icon on the left-hand bar). It lists every test file and every test inside it. The official [Testing](https://code.visualstudio.com/docs/debugtest/testing) documentation covers this view in depth.
 
-![Testing View](vscodeImg/beaker.png)
+![Testing View](img/beaker.png)
 
 - The **Run Tests** button at the top of the Testing View runs everything.
 
-  ![Run tests button](vscodeImg/runTests.png)
+  ![Run tests button](img/runTests.png)
 
 - A green check means a test passed. A red `x` means it failed; click it to see what the test expected and what your function actually returned.
 - When a test file is open in the editor, each `test(...)` has a small green play arrow in the gutter to its left. Click it to run only that test. A red icon there means the last run of that test failed.
 
 When a test fails, three places report it: the Testing View marks it in the left panel, the editor annotates the failing line, and the Test Results tab at the bottom prints what the test expected and what it got. Any of them will tell you why the test did not pass.
 
-![Testing IDE](vscodeImg/testing.png)
+![Testing IDE](img/testing.png)
 
 You can also use the Terminal View at the bottom of VSCode to invoke the tests and get feedback about what is passing or failing:
 
@@ -102,8 +102,8 @@ You can also use the Terminal View at the bottom of VSCode to invoke the tests a
 pnpm test
 ```
 
-![Terminal Test Command](vscodeImg/terminalTest.png)
-![Terminal Test Failure](vscodeImg/terminalTestFail.png)
+![Terminal Test Command](img/terminalTest.png)
+![Terminal Test Failure](img/terminalTestFail.png)
 
 A few things to keep in mind:
 
@@ -144,15 +144,15 @@ The lecture activities, midterms, and final exams run entirely in the browser wo
 
 5. _VSCode Extensions_: Open the Extensions View in VSCode (the blocks icon on the left-hand bar). Extensions add language and tool support to VSCode, and the next two steps install the two this course relies on. The [Extension Marketplace](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace) page explains how to find, install, and manage extensions. NOTE: you cannot install extensions in our VSCode web instance, only in your own standalone IDE. The web instance already has both of the extensions below.
 
-   ![Extensions View](vscodeImg/extensions.png)
+   ![Extensions View](img/extensions.png)
 
 6. _The Vitest extension_: In the Extensions View, search for "Vitest" and install the one published by Vitest. Without it the Testing View cannot find your tests.
 
-   ![Vitest Extension](vscodeImg/vitest.png)
+   ![Vitest Extension](img/vitest.png)
 
 7. _The Biome extension_: In the Extensions View, search for "Biome" and install the one published by biomejs. It is what puts lint warnings in the editor and the Problems View; without it, only compilation errors appear there, and you would have to run `pnpm lint` to see lint problems.
 
-   ![Biome Extension](vscodeImg/biome.png)
+   ![Biome Extension](img/biome.png)
 
 Once these steps are complete you are ready to open a project. If you cloned a repository, that clone is the folder you want. Choose **File > Open Folder** and pick the folder that contains the project's `package.json`. The first time you open a project, run `pnpm install` in the Terminal View to download its dependencies. After that, `pnpm build`, `pnpm test`, and `pnpm lint:fix` work exactly as they do in the browser workspace, and the Problems View and Testing View behave the same way.
 
