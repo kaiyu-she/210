@@ -336,7 +336,7 @@ test("find returns undefined when nothing matches",
 
 ### The Function Argument
 
-In all the array operation example above, we use an anonymous function with a single expression as body for the function argument. But this is not a restriction!
+In all the array operation examples above, we use an anonymous function with a single expression as body for the function argument. But this is not a restriction!
 
 As with anywhere you have a single-expression anonymous function, the function argument can also be an anonymous function with statements in the body:
 
